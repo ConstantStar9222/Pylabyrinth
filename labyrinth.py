@@ -30,6 +30,7 @@ for C in range(len(a)):
      Colone += 1
 
 
+
 for I in range(len(a)):
      if (a[I][0] == 0):
           Y = I
@@ -39,6 +40,8 @@ for F in range(len(a)):
      if (a[F][R] == 0):
           Fine = F
           break
+
+print()
 
 print("*CARICAMENTO E ELABORAZIONE LABIRINTO COMPLETATO*\n")
 
@@ -60,69 +63,71 @@ if (presentation == False):
      
      startgame = input("Iniziamo? 'Digita Si/No' = ")
      
-     if (startgame == "Si"):
+     if (startgame.lower() == "si"):
           print("bene iniziamo!\n")
-          print("Coordinate:\n" + "Y=" + str(Y) + " X=" + str(X))
+          print("Coordinate: " + "Y=" + str(Y) + " X=" + str(X))
           presentation = True
           endgame = False
      
-     elif (startgame == "No"):
+     elif (startgame.lower() == "no"):
           print("Ok, torna quando vorrai giocare")
           presentation = False
           endgame = False
           Rest = input("digita quello che vuoi e premi invio = ")
           print("ciao, ben tornato")
           print("bene iniziamo!")
+          print("\nCoordinate: " + "Y=" + str(Y) + " X=" + str(X))
           presentation = True
           endgame = False
+          
 
 while endgame == False:
 #####################################################################################################################################################################
      if (X == R and Y == Fine):
-          print("\nBRAVO",name,"HAI FINITO IL GIOCO IN",passi,"PASSI")
+          print("\nBRAVO",name.upper(),"HAI FINITO IL GIOCO IN",passi,"PASSI")
           presentation == True
           endgame == True
           break
 #####################################################################################################################################################################
      posizione = input("\nDigita qua il comando= ")
 #####################################################################################################################################################################
-     if (posizione == "W"):#a[colonna][riga]
+     if (posizione.lower() == "w"):#a[colonna][riga]
           if a[Y-1][X] == 1:
-               print("\nmuro")
+               print("\nmuro\n")
                passi += 1
 
           if a[Y-1][X] == 0:
-               print("\npasso fatto")
+               print("\npasso fatto\n")
                Y-=1
                passi += 1
 #####################################################################################################################################################################
-     if (posizione == "A"):#a[colonna][riga]
+     if (posizione.lower() == "a"):#a[colonna][riga]
           if a[Y][X-1] == 1:
-               print("\nmuro")
+               print("\nmuro\n")
                passi += 1
 
           if a[Y][X-1] == 0:
-               print("\npasso fatto")
+               print("\npasso fatto\n")
                X-=1
                passi += 1
 #####################################################################################################################################################################
-     if posizione == "S":#a[colonna][riga]
+     if posizione.lower() == "s":#a[colonna][riga]
           if (a[Y+1][X] == 1):
-               print("\nmuro")
+               print("\nmuro\n")
                passi += 1
 
           if a[Y+1][X] == 0:
-               print("\npasso fatto")
+               print("\npasso fatto\n")
                Y += 1
                passi += 1
 #####################################################################################################################################################################
-     if posizione == "D":#a[colonna][riga]
+     if posizione.lower() == "d":#a[colonna][riga]
           if a[Y][X+1] == 1:
-               print("\nmuro")
+               print("\nmuro\n")
                passi += 1
 
           if a[Y][X+1] == 0:
-               print("\npasso fatto")
+               print("\npasso fatto\n")
                X+=1
                passi += 1
 #####################################################################################################################################################################
